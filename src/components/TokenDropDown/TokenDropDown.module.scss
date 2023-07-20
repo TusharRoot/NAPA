@@ -1,0 +1,115 @@
+.customdropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 9999;
+}
+
+.dropdowntoggle {
+  padding: 16px 16px 16px 16px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+
+  span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Neuropolitical';
+    font-size: 24px;
+  }
+}
+
+.actionbutton {
+  background-color: #0e1212;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+}
+
+.dropdownoptions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 8px 0px;
+  margin: 0;
+  background-color: #0e1212;
+  border: 1px solid #0e1212;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  li {
+    cursor: pointer;
+    color: #fff;
+
+    &:hover {
+      background-color: #181c1c;
+      color: #16e6ef;
+    }
+
+    .selectedDropdowOption {
+      color: #16e6ef;
+      display: flex;
+      justify-content: space-between;
+      background-color: #181c1c;
+      padding: 8px 16px;
+      font-family: "Avenir"
+    }
+
+    .selectHoverOption {
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 16px;
+      font-family: 'Avenir';
+      font-size: 18px;
+      border-radius: 20px;
+
+      &:hover {
+        color: #16e6ef;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .dropdowntoggle{
+    padding: 16px 0px 16px 0px;
+    span {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: white;
+      font-family: 'Neuropolitical';
+      font-size: 24px;
+    }
+  }
+}
+@media screen and (max-width: 320px) {
+.customdropdown {
+margin-left: -8px;
+}
+.dropdownoptions{
+  padding: 8px 0px;
+}
+}
+@media screen and (max-width: 360px) {
+  .dropdowntoggle {
+  
+    span {
+     width: 105px !important;
+    }
+  }
+}
+@media screen and (max-width: 820px) {
+  .dropdowntoggle {
+  
+    span {
+     width: 124px !important;
+    }
+  }
+}

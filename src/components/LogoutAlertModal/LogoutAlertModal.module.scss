@@ -1,0 +1,71 @@
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999999;
+  inset: 0;
+  backdrop-filter: blur(15px);
+  color: white;
+  background-color: 'black';
+
+  .deleteAccountContainer {
+    // background-color: black;
+    // background-color: #16e6ef;
+    padding: 2rem;
+    border-radius: 20px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    .deleteAccountheading {
+      font-family: 'Neuropolitical';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 34px;
+      line-height: 110%;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .deleteAccountText {
+      font-family: 'Avenir';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 140%;
+      text-align: center;
+      color: #ffffff;
+      padding-top: 1rem;
+    }
+
+    .deleteAccountBtnContainer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 48px;
+    }
+
+    .deleteAccountCancel {
+      font-family: 'Neuropolitical';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 110%;
+      color: #ffffff;
+      border: none;
+      background-color: transparent;
+    }
+
+    .deleteAccountDelete {
+      font-family: 'Neuropolitical';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 110%;
+      color: #ff4e51;
+      border: none;
+      background-color: transparent;
+    }
+  }
+}

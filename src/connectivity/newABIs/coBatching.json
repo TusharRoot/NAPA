@@ -1,0 +1,1394 @@
+{
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_napaToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_usdtToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address payable",
+                    "name": "_feesAddress",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "poolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "admin",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "nftId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maxParticipants",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maxContribution",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "expirationTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "enum PoolType",
+                    "name": "poolType",
+                    "type": "uint8"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "floorPrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PoolCreated",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "poolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "success",
+                    "type": "bool"
+                }
+            ],
+            "name": "PoolEnded",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "poolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "participant",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "contribution",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PoolJoined",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "poolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "price",
+                    "type": "uint256"
+                }
+            ],
+            "name": "PoolListed",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Received",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "poolId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "participant",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "accept",
+                    "type": "bool"
+                }
+            ],
+            "name": "VoteCast",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_seller",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "BuyFraction",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "_nftMarketPlace",
+            "outputs": [
+                {
+                    "internalType": "contract NFTMarket",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_poolid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "activepool",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "_feesAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "changeFeesAddress",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_napaToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_usdtToken",
+                    "type": "address"
+                }
+            ],
+            "name": "changeNapaToken",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_itemId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_maxParticipants",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_maxContribution",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_biddingTime",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "enum PoolType",
+                    "name": "_poolType",
+                    "type": "uint8"
+                }
+            ],
+            "name": "createPool",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_itemId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "endPool",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "feesAddress",
+            "outputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_id",
+                    "type": "uint256"
+                }
+            ],
+            "name": "fetchMarketData",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "nftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "nftAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enum PaymentMode",
+                            "name": "PaymentMode",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "isCobatchable",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "seller",
+                            "type": "address"
+                        }
+                    ],
+                    "internalType": "struct CoBatchingPool.marketPlaceItemData",
+                    "name": "_marketPlaceItemData",
+                    "type": "tuple"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "fetchPoolData",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "admin",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "itemId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "nftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "nftAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "owner",
+                            "type": "address"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "maxParticipants",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "maxContribution",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "expirationTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "enum PoolType",
+                                    "name": "poolType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "enum PaymentMode",
+                                    "name": "_paymentMode",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "floorPrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "neededContribution",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "active",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "resaleId",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct PoolMetadata",
+                            "name": "poolMetadata",
+                            "type": "tuple"
+                        }
+                    ],
+                    "internalType": "struct PoolBasicData",
+                    "name": "_basicData",
+                    "type": "tuple"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "maxParticipants",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "maxContribution",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "expirationTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enum PoolType",
+                            "name": "poolType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "enum PaymentMode",
+                            "name": "_paymentMode",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "floorPrice",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "neededContribution",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "active",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "resaleId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct PoolMetadata",
+                    "name": "_poolMetadata",
+                    "type": "tuple"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                }
+            ],
+            "name": "fetchPoolDetails",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "admin",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "itemId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "nftId",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "nftAddress",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "owner",
+                            "type": "address"
+                        },
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "maxParticipants",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "maxContribution",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "expirationTime",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "enum PoolType",
+                                    "name": "poolType",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "enum PaymentMode",
+                                    "name": "_paymentMode",
+                                    "type": "uint8"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "floorPrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "neededContribution",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "bool",
+                                    "name": "active",
+                                    "type": "bool"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "resaleId",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct PoolMetadata",
+                            "name": "poolMetadata",
+                            "type": "tuple"
+                        }
+                    ],
+                    "internalType": "struct PoolBasicData[]",
+                    "name": "",
+                    "type": "tuple[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "fetchPoolmember",
+            "outputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "_participants",
+                    "type": "address[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "fetchVotedStatus",
+            "outputs": [
+                {
+                    "internalType": "address[]",
+                    "name": "",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "bool[]",
+                    "name": "",
+                    "type": "bool[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "fractionSeller",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "poolId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "nftId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "nftContract",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "sellPerson",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "contributionPrize",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "expirationTime",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "sold",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_poolid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "isResaleActive",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "itempoolinfo",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "poolId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isPoolCreated",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "joinPool",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_poolid",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_member",
+                    "type": "address"
+                }
+            ],
+            "name": "memberPercentage",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "napaToken",
+            "outputs": [
+                {
+                    "internalType": "contract IERC20",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_itemId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "newPoolId",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address[]",
+                    "name": "",
+                    "type": "address[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "nfts",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "participantList",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "participants",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "contribution",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "percentageOwns",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "voted",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "pools",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "admin",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "itemId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "nftId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "nftAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "maxParticipants",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "maxContribution",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "expirationTime",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "enum PoolType",
+                            "name": "poolType",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "enum PaymentMode",
+                            "name": "_paymentMode",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "floorPrice",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "neededContribution",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "active",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "resaleId",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct PoolMetadata",
+                    "name": "poolMetadata",
+                    "type": "tuple"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_newPrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "reListItem",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "resaleItem",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "nftId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "nftcontract",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "newPrice",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "activeForSale",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_itemId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "resalePoolInfo",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "resalepooliteminfo",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "poolid",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "resalepoolitem",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_itemId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "returnPollId",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "pollId",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_itemId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "returnpoolId",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "poolId",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "sellFraction",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_itemId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_poolid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setData",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "_marketPlaceAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "setMarketplaceaddress",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_itemId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setResaleValue",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_itemId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_poolid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setsellData",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_tokenId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "nftContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "transferNFT",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "usdtToken",
+            "outputs": [
+                {
+                    "internalType": "contract IERC20",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "_accept",
+                    "type": "bool"
+                }
+            ],
+            "name": "voteForPrice",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "__poolId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "votingResult",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                }
+            ],
+            "name": "withDrawFunds",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "stateMutability": "payable",
+            "type": "receive"
+        }
+    ]
+}

@@ -1,0 +1,758 @@
+@import '../../../styles/abstracts/mixins.module';
+@import '../../../styles/abstracts/variable.module';
+
+.container {
+  width: 100%;
+  hr {
+    border: 0px solid $gray;
+    margin-bottom: 10.0rem;
+    @media screen and (max-width: 1200px) {
+      margin-bottom: 2.5rem;
+    }
+  }
+  .settingsContainer {
+    height: 100%;
+    .settings {
+      color: $white;
+      text-align: left;
+      @include font-6xl-neuropolitical-normal;
+      font-size: 24px;
+      line-height: 110%;
+      max-width: 1200px;
+      margin-bottom: 20px;
+    }
+    .videoBtns{
+      text-align: left;
+      margin-bottom: 30px;
+      img{
+        margin-right: 30px;
+      }
+    }
+    .videoTime{
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: 400;
+      font-size: 14px;
+      color: #FFFFFF;
+      span{
+        width: 10px;
+        height: 10px;
+        background: #DB243A;
+        border-radius: 100%;
+        display: inline-block;
+        margin-right: 12px;
+      }
+    }
+    // >a {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: flex-start;
+    //   padding: 108px 0 8px 0;
+    //   &:hover{
+    //     color: red;
+    //   }
+    //   >span{
+    //     img{
+    //       &:hover{
+    //         color: #fff;
+    //       }
+    //     }
+        
+    //   }
+    // }
+  }
+}
+.succesBtnThree {
+  display: flex;
+  align-items: center;
+  margin-top: 44px;
+
+  button {
+    padding: 14px 30px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 110%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-out;
+    color: #ffffff;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    >span {
+      margin-right: 12px !important;
+    }
+    img{
+      margin-right: 16px;
+    }
+  }
+
+  .SuccesFrstBtn {
+    border: 2px solid #16E6EF;
+  }
+  .SuccesSecBtn {
+    border: 2px solid #1D9BF0;    
+    margin: 0 30px;
+  }
+  .SuccesthiBtn {
+    border: 2px solid #1877F2;
+  }
+
+}
+
+ .firstGridmian {
+   button {
+     font-family: 'Neuropolitical';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 14px;
+     line-height: 110%;
+     text-align: center;
+     color: #16E6EF;
+     width: 100%;
+     padding: 12px 30px;
+     border: 1px solid #16E6EF;
+     background: transparent;
+     margin-top: 0;
+
+     &:hover {
+       background: #16e6ef;
+       color: #102324;
+       transition: all 0.2s ease-out;
+     }
+   }
+
+ }
+@media screen and (max-width: 736px) {
+  .container {
+    .settingsContainer {
+      .settings {
+        padding-top: 2px;
+        font-size: 32px;
+        line-height: 110%;
+      }
+    }
+  }
+}
+// .CustomGridContainer{
+//   display: grid;
+//   grid-gap: 80px;
+//   grid-template-columns: repeat(2, minmax(0px, 1fr));
+// }
+.CustomGridContainer{
+  display: flex;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+.lstreamvideo{
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+      margin-bottom: -30px;
+  img{
+    height: 700px;
+    width: 100%;
+    object-fit: cover;
+  } 
+  .lsStreamsframe{
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 9.7rem;
+    margin: 0 auto;
+    video{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.lstreamvideo:before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  top: 0;
+  width: 100%;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 49.86%, #000000 100%)
+}
+
+
+@media screen and (max-width:1200px) {
+  .settingsContainer {
+    .settings {
+        max-width: 688px !important;
+        margin: 0;
+    }
+  }
+  .CustomGridContainer{
+    flex-direction: column;
+    display: block;
+    .firstGridmian{
+      button{
+        margin-bottom: 55px;
+        &:hover{
+        
+        }
+      }
+    }
+    
+  }
+}
+@media screen and (max-width:736px) {
+  .CustomGridContainer{
+    padding-top: 33px;
+    .firstGridmian{
+      button{
+        margin-bottom: 49px;
+        &:hover{
+        
+        }
+      }
+    }
+  }
+}
+
+
+.CustomGridContainer {
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+}
+
+.boxinnrcont {
+  position: relative;
+
+  .apernt {
+    text-decoration: none;
+    display: flex;
+    width: 100% !important;
+    height: 480px;
+    
+    >span {
+      width: 100% !important;
+    }
+   
+
+  }
+    > ::after {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      content: "";
+      top: 0;
+      left: 0;
+      background: linear-gradient(180deg, rgba(24, 27, 27, 0) 0%, rgba(24, 27, 27, 0.9) 100%);
+    }
+}
+
+.upCont {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 1;
+
+  p {
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #ffffff;
+    margin: 0 0 0 10px;
+  }
+}
+
+.downCont {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  right: 32px;
+  z-index: 1;
+
+  h3 {
+    font-family: 'Neuropolitical';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 110%;
+    color: #ffffff;
+    text-align: start;
+    max-width: 320px;
+    margin: 0 0 26px 0;
+  }
+
+  .flexPernt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+
+    .currentBit {
+      text-align: start;
+      width: 50%;
+      margin-bottom: 30px;
+      padding-right: 10px;
+          word-break: break-all;
+
+      h5 {
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        color: #ffffff;
+        margin: 0 0 5px 0;
+      }
+
+      .txtimgFlex {
+        display: flex;
+        align-items: center;
+
+        p {
+          font-family: 'Avenir';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 140%;
+          color: #ffffff;
+          margin: 0 0 0 0px;
+        }
+        .largefont {
+          color: #FFFFFF;
+          font-weight: 400;
+          font-size: 18px;
+          text-decoration: none;
+          font-family: "Neuropolitical";
+        }
+      }
+    }
+
+    .endingIn {
+      width: 50%;
+      margin-bottom: 30px;
+      p {
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        margin: 0 0 5px 0;
+        color: #ffffff;
+      }
+      .largefont {
+        color: #FFFFFF;
+        font-weight: 400;
+        font-size: 18px;
+        text-decoration: none;
+        font-family: "Neuropolitical";
+      }
+
+      h3 {
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 140%;
+        color: #ffffff;
+        margin: 0;
+        text-decoration: underline;
+      }
+      
+    }
+  }
+}
+
+.chosBtnPernt {
+  a {
+    font-family: "Neuropolitical";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    text-align: center;
+    color: #16e6ef;
+    text-decoration: none;
+    border: 1px solid #16e6ef;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    padding: 12px 5px;
+    display: block;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+   > img {
+        margin: 0 5px;
+      }
+
+   
+  }
+    .BtnPerntBuy {
+      color: #102324;
+      background-color: #16e6ef;
+      margin-right: 30px;
+    }
+  
+}
+
+.streamCardContainer {
+  padding: 0 0 4rem 0;
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(4, minmax(0px, 1fr));
+
+  .streamCard {
+    position: relative;
+
+    .liveStreams {
+      width: 100%;
+      height: 15rem;
+    }
+
+    .streamStatusContainer {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      right: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .streamStatus {
+        @include font-sm-avenir-regular;
+        background-color: rgba(16, 35, 36, 0.4);
+        display: inline-block;
+        padding: 0.313rem 0.75rem;
+        border-radius: 100px;
+        color: white;
+        backdrop-filter: blur(15px);
+      }
+
+      .streamViewers {
+        @include font-sm-avenir-regular;
+        display: inline-block;
+        padding: 0.313rem 0.9rem;
+        border-radius: 100px;
+        background-color: rgba(16, 35, 36, 0.4);
+        color: white;
+        backdrop-filter: blur(15px);
+      }
+      .streamDuration {
+        @include font-sm-avenir-regular;
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 100px;
+        font-weight: 400;
+        background: rgba(16, 35, 36, 0.4);
+        backdrop-filter: blur(15px);
+        color: white;
+        position: absolute;
+        bottom: -164px;
+        right: 0;
+        margin-bottom: 0;
+        
+      }
+    }
+
+    .streamTitle {
+      @include font-md-neuropolitical-normal;
+      line-height: 1.6rem !important;
+      text-align: left;
+      margin: 20px 0 30px 0;
+      color: white;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .avatarContainer {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: 0px;
+
+      .streamUserAvatar {
+        width: 32px;
+        border-radius: 100px;
+      }
+
+      .streamUserName {
+        @include font-sm-avenir-regular;
+        color: white;
+        margin: 0;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+.previousStreams{
+  margin-top: 70px;
+}
+.showChatBox{
+  width: 360px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 15px 15px 0 15px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #000000 100%);
+  .chatList{
+    text-align: left;
+    height: 620px;
+    overflow-y: auto;
+    .chatListItem{
+      display: flex;
+      margin-bottom: 20px;
+      img{
+        margin-right: 10px;
+      }
+      .clientName{
+        font-weight: 500;
+        font-size: 14px;
+        color: #FFFFFF;
+        margin-bottom: 2px;
+      }
+      .clientMesaage{
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 0;
+        color: #FFFFFF;
+      }
+    }
+    .chatDownIcon {
+      margin: 0 auto;
+      position: relative;
+      display: block;
+      cursor: pointer;
+      z-index: 1;
+    }
+    
+  }
+  
+  .sendMsgBox{
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .accountIcon{
+      margin-right: 15px;
+      display: inline-block;
+    }
+  .sendMesginput{
+    width: 100%;
+    margin-right: 15px;
+    background: transparent;
+    border: none;
+    padding: 10px 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    }
+    .sendMesginput:focus {
+      outline: none;
+    }
+    .sendMesginput::placeholder{
+      opacity: 0.5;
+      color: #FFFFFF;
+    }
+    .sendMesgButton{
+      font-weight: 400;
+      font-size: 14px;
+      color: #16E6EF;
+      padding: 0;
+      border: none;
+      font-family: Neuropolitical;
+      background: transparent;
+    }
+  }
+}
+
+.viwerList{
+  text-align: left;
+  width: 360px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  .viwerListBox{
+    background: rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(25px); 
+    z-index: 1;
+    padding: 15px;
+    .vTitles{
+      text-align: center;
+      font-weight: 500;
+      color: #FFFFFF;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    .viewersList{
+      height: 420px;
+      overflow-y: auto;
+    }
+    .viewersListitem{
+      display: flex;
+      margin-bottom: 15px;
+      align-items: center;
+      padding-right: 100px;
+      position: relative;
+      img{
+        margin-right: 10px;
+      }
+      .viewersName{
+        font-weight: 400;
+        font-size: 14px;
+        color: #FFFFFF;
+        margin-right: 10px;
+        margin-bottom: 0;
+      }
+      .viewersCountry{
+        font-weight: 400;
+        font-size: 14px;
+        color: #FFFFFF;
+        opacity: 0.5;
+        margin-bottom: 0;
+        position: absolute;
+        right: 0;
+        top: 6px;
+      }
+    }
+  }
+  .viwerListBox:before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+  }
+
+    .sendMsgBox {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      backdrop-filter: none;
+      position: relative;
+      z-index: 1;
+      justify-content: space-between;
+      padding: 0 15px;
+  
+      .accountIcon {
+        margin-right: 15px;
+        display: inline-block;
+        cursor: pointer;
+      }
+  
+      .sendMesginput {
+        width: 100%;
+        margin-right: 15px;
+        background: transparent;
+        border: none;
+        padding: 10px 0;
+        font-weight: 400;
+        font-size: 16px;
+        color: #ffffff;
+      }
+  
+      .sendMesginput:focus {
+        outline: none;
+      }
+  
+      .sendMesginput::placeholder {
+        opacity: 0.5;
+        color: #FFFFFF;
+      }
+  
+      .sendMesgButton {
+        font-weight: 400;
+        font-size: 14px;
+        color: #FFFFFF;
+        padding: 0;
+        opacity: 0.5;
+        border: none;
+        font-family: Neuropolitical;
+        background: transparent;
+      }
+    }
+}
+.heatMapTab{
+  height: 420px;
+  overflow-y: auto;
+  .heatMaplist{
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+  }
+  span{
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    border-radius: 50px;
+  }
+}
+.vierstabs{
+  display: flex;
+  border: 1px solid rgba(255,255,255,0.1);
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.vierstabs p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: #FFFFFF;
+  padding: 4px 10px;
+  margin: 0;
+  width: 50%;
+  cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  .streamCardContainer {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+  }
+  .lstreamvideo{
+    img{
+          height: 700px;
+    }
+  }
+ 
+}
+
+@media screen and (max-width: 600px) {
+  .streamCardContainer {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(1, minmax(0px, 1fr));
+  }
+}

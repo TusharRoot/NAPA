@@ -1,0 +1,1157 @@
+@import '../../../styles/abstracts/mixins.module';
+@import '../../../styles/abstracts/variable.module';
+
+.container {
+  width: 100%;
+
+  hr {
+    border: 0px solid $gray;
+    margin-bottom: 5rem;
+
+    @media screen and (max-width: 1200px) {
+      margin-bottom: 0rem;
+    }
+  }
+
+  .loderIconContainer {
+    min-width: 750px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .settingsContainer {
+    height: 100%;
+
+    .settings {
+      padding-top: 113px;
+      color: $white;
+      text-align: left;
+      @include font-6xl-neuropolitical-normal;
+      font-size: 76px;
+      line-height: 110%;
+      padding-right: 1px;
+
+      .headerSection {
+        display: flex;
+        justify-content: space-between;
+
+        .walletHeading {
+          font-size: 76px;
+        }
+
+        span {
+          @include font-md-avenir-medium;
+          padding-left: 10px;
+        }
+
+        .settingsLabel {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.accountContainer {
+  display: flex;
+  border: 1px solid #212c2c;
+  margin-top: 2rem;
+  width: 100%;
+  text-align: left;
+  padding: 30px;
+
+  .accountLeftContainer {
+    flex-basis: 50%;
+
+    .accountText {
+      @include font-lg-neuropolitical-normal;
+      color: white;
+    }
+
+    .accountTextContainer {
+      display: flex;
+
+      .accountNumber {
+        @include font-3xl-neuropolitical-normal;
+        color: white;
+
+        .tokenListBalance {
+          font-size: 26px;
+        }
+      }
+
+      .acccountDropdown {
+        display: flex;
+        align-items: flex-end;
+        @include font-lg-neuropolitical-normal;
+        padding-left: 32px;
+      }
+    }
+
+  }
+
+
+  .accountRightContainer {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: flex-end;
+
+    .depositBtn {
+      @include font-md-neuropolitical-normal;
+
+      padding: 2rem;
+      padding-right: 7.5rem;
+      border: none;
+      border-radius: 16px;
+      background: #192020;
+      color: #16e6ef;
+    }
+
+    .withdrawalBtn {
+      @include font-md-neuropolitical-normal;
+
+      border: none;
+      padding: 2rem;
+      padding-right: 9.5rem;
+      margin-left: 16px;
+      border-radius: 16px;
+      background: #192020;
+      color: #ff4e51;
+    }
+  }
+}
+
+.walletTableContainer {
+  margin-bottom: 3rem;
+  display: flex;
+  margin-top: 24px;
+  width: 100%;
+
+  .walletTokensContainer {
+    border: 1px solid #212c2c;
+    padding-top: 2rem;
+    width: 50%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 24px;
+    &:after {
+      content: '';
+      background: linear-gradient(180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.9) 100%);
+      opacity: 1;
+      height: 9rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .tabsContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      min-width: 500px;
+
+      .tabs {
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        align-items: center;
+
+        .tab {
+          font-family: 'Neuropolitical';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 110%;
+          color: #677778;
+          cursor: pointer;
+        }
+
+        .tab1 {
+          font-family: 'Neuropolitical';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 110%;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+
+      .tabOne {
+        font-size: 1.625rem;
+        color: white;
+        font-family: 'Neuropolitical';
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+      }
+
+      .tab {
+        @include font-sm-neuropolitical-normal;
+        color: #91a5a6;
+      }
+    }
+
+    .nftContainerDiv {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #212c2c;
+
+      .nftImageContainer {
+        display: flex;
+        padding: 20px;
+
+        .imageContainer {
+          .imageDiv {
+            border-radius: 12px;
+          }
+        }
+
+        .textDivContainer {
+          padding-left: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .text1 {
+            @include font-md-avenir-regular;
+            color: #ffffff;
+          }
+
+          .text2 {
+            @include font-sm-avenir-regular;
+            color: #677778;
+          }
+        }
+      }
+
+      .nftImageContainer {
+        .textDivContainer1 {
+          padding-left: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          .text1 {
+            @include font-md-avenir-regular;
+            color: #ffffff;
+          }
+
+          .text2 {
+            @include font-sm-avenir-regular;
+            color: #677778;
+          }
+        }
+      }
+    }
+
+    // .shadow1 {
+    //   background: linear-gradient(
+    //     180deg,
+    //     rgba(0, 0, 0, 0) 0%,
+    //     rgba(0, 0, 0, 0.9) 100%
+    //   );
+    //   padding: 20px;
+    //   position: absolute;
+    //   width: 42%;
+    //   bottom: 4rem;
+    //   height: 12%;
+    // }
+  }
+
+  .walletTokensContainer1 {
+    border: 1px solid #212c2c;
+    padding-top: 2rem;
+    width: 50%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 24px;
+
+    .tabsContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      min-width: 500px;
+
+      .tabs {
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        align-items: center;
+
+        .tab {
+          font-family: 'Neuropolitical';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 110%;
+          color: #677778;
+          cursor: pointer;
+        }
+
+        .tab1 {
+          font-family: 'Neuropolitical';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 110%;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
+
+      .tabOne {
+        font-size: 1.625rem;
+        color: white;
+        font-family: 'Neuropolitical';
+        font-style: normal;
+        font-weight: 400;
+        line-height: 110%;
+      }
+
+      .tab {
+        @include font-sm-neuropolitical-normal;
+        color: #91a5a6;
+      }
+    }
+
+    .nftContainerDiv {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #212c2c;
+
+      .nftImageContainer {
+        display: flex;
+        padding: 20px;
+
+        .imageContainer {
+          .imageDiv {
+            border-radius: 12px;
+          }
+        }
+
+        .textDivContainer {
+          padding-left: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .text1 {
+            @include font-md-avenir-regular;
+            color: #ffffff;
+          }
+
+          .text2 {
+            @include font-sm-avenir-regular;
+            color: #677778;
+          }
+        }
+      }
+
+      .nftImageContainer {
+        .textDivContainer1 {
+          padding-left: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+
+          .text1 {
+            @include font-md-avenir-regular;
+            color: #ffffff;
+          }
+
+          .text2 {
+            @include font-sm-avenir-regular;
+            color: #677778;
+          }
+        }
+      }
+    }
+  }
+
+  .textIconContainer {
+    display: flex;
+    justify-content: space-between;
+    // padding-top: 27px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 10px;
+    min-width: 500px;
+
+    .textContainer {
+      color: #15ccd3;
+      cursor: pointer;
+      font-family: 'Neuropolitical';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 110%;
+      margin-top: 25px;
+    }
+  }
+
+  .tableHeader1 {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    color: #677778;
+    // padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    // width: 100%;
+    text-align: center;
+    min-width: 585px;
+
+    .tableHeadingToken {
+      width: 10vw;
+      // margin-left: 1rem;
+    }
+
+    .tableHeadingToken1 {
+      width: 10vw;
+      margin-right: 2rem;
+    }
+
+    .tableHeadingToken2 {
+      width: 10vw;
+      // margin-left: 3rem;
+    }
+
+    .tableHeadingToken3 {
+      width: 10vw;
+      margin-right: 3.5rem;
+    }
+  }
+
+  .walletTransactionContainer {
+    border: 1px solid #212c2c;
+    // padding: 2rem;
+    // background-color: #15ccd3;
+    margin-left: 24px;
+    width: 50%;
+    overflow-x: auto;
+    border-radius: 24px;
+
+    .tableData {
+      height: 77px;
+      color: white;
+      border-bottom: 1px solid #212c2c;
+    }
+  }
+
+  // .walletTransactionContainer1 {
+  //   border: 1px solid #212c2c;
+  //   // padding: 2rem;
+  //   // background-color: #15ccd3;
+  //   margin-left: 24px;
+  //   width: 50%;
+  //   overflow-x: auto;
+  //   border-radius: 24px;
+  //   .tableData {
+  //     height: 77px;
+  //     color: white;
+  //     border-bottom: 1px solid #212c2c;
+  //   }
+  // }
+
+  .walletTransactionContainer1 {
+    border: 1px solid #212c2c;
+    // padding: 2rem;
+    margin-left: 24px;
+    width: 50%;
+    overflow-x: auto;
+    border-radius: 24px;
+    position: relative;
+
+    &:after {
+      content: '';
+      background: linear-gradient(180deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.9) 100%);
+      opacity: 1;
+      height: 9rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .tableData {
+      height: 77px;
+      color: white;
+      border-bottom: 1px solid #212c2c;
+    }
+  }
+}
+
+
+.tokenDiv {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-bottom: 1px solid #212c2c;
+  padding-bottom: 27px;
+}
+
+.tokenDivLeft {
+  display: flex;
+  width: 100%;
+  // justify-content: space-around;
+}
+
+.tokenDivLeft {
+  // width: 40%;
+
+  .hideTokens {
+    width: 10vw;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    text-align: start;
+    color: white;
+  }
+
+  .hideTokens1 {
+    width: 10vw;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    text-align: start;
+    color: gray;
+  }
+}
+
+.tokenDivRight {
+  display: flex;
+  justify-content: space-between;
+  width: 35%;
+}
+
+.bitcoinText {
+  // @include font-md-avenir-regular;
+  font-weight: 400;
+  line-height: 140%;
+  font-style: normal;
+  font-family: Avenir;
+  color: white;
+  // width: 10vw;
+  padding-right: 3rem;
+  padding-left: 2rem;
+  text-align: start;
+}
+
+.bitcoinText13 {
+  // @include font-md-avenir-regular;
+  font-weight: 400;
+  line-height: 140%;
+  font-style: normal;
+  font-family: Avenir;
+  color: #677778;
+  // width: 10vw;
+  // padding-right: 2rem;
+  padding-left: 2.8rem;
+  text-align: start;
+}
+
+.bitcoinText11 {
+  // @include font-md-avenir-regular;
+  font-weight: 400;
+  line-height: 140%;
+  font-style: normal;
+  font-family: Avenir;
+  color: white;
+  // width: 10vw;
+  // padding-right: 2rem;
+  padding-left: 1rem;
+  // text-align: start;
+}
+
+.bitcoinText1 {
+  @include font-md-avenir-regular;
+  color: #677778;
+}
+
+.transactionContainer {
+  min-width: 600px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  min-width: 500px;
+  @include font-lg-neuropolitical-normal;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: -20px;
+  padding-right: 14rem;
+  color: #677778;
+  // padding-bottom: 20px;
+  padding-top: 10px;
+  font-size: 14px;
+  min-width: 585px;
+
+  .tableHeading {
+    width: 27%;
+  }
+
+  .tableHeading1 {
+    width: 27%;
+    padding-left: 1.5rem;
+  }
+
+  .tableHeading2 {
+    width: 27%;
+    padding-left: 3rem;
+  }
+
+  .tableHeading3 {
+    width: 27%;
+    padding-left: 4rem;
+  }
+}
+
+.tableRowBorder {
+  color: white;
+  height: 75px;
+  border: 1px solid rgb(33, 44, 44) !important;
+  .tablerows {
+    padding-left: 1rem;
+    width: 10.5vw;
+    text-align: left;
+    // width: 25%;
+  }
+
+  .tableRow {
+    width: 10vw;
+    text-align: left;
+  }
+
+  .tableRowend {
+    width: 9vw;
+    padding-left: 12px;
+    text-align: left;
+  }
+}
+
+
+.tablehead {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #91a5a6;
+}
+
+.tableBody {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+// .shadow {
+//   background: linear-gradient(
+//     180deg,
+//     rgba(0, 0, 0, 0) 0%,
+//     rgba(0, 0, 0, 0.9) 100%
+//   );
+//   // padding: 20px;
+//   position: absolute;
+//   width: 100%;
+//   bottom: 1rem;
+//   height: 12%;
+// }
+
+.walletDropdownContainer {
+  font-family: Avenir;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 25px;
+  line-height: 140%;
+  text-align: left;
+  vertical-align: top;
+  fill: solid;
+  color: #ffffff;
+}
+
+.settingDropdownContainer {
+  display: flex;
+  align-items: center;
+}
+
+.optionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  >span {
+    margin-right: 12px !important;
+  }
+}
+
+// .customdropdown {
+//   position: relative;
+//   display: inline-block;
+//   z-index: 999;
+// }
+
+// .dropdowntoggle {
+//   padding: 16px 16px 16px 16px;
+//   border: none;
+//   width: 100%;
+//   cursor: pointer;
+//   background-color: transparent;
+
+//   span {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+// }
+
+// .actionbutton {
+//   background-color: #010202;
+//   border-top-left-radius: 20px;
+//   border-top-right-radius: 20px;
+// }
+
+// .dropdownoptions {
+//   position: absolute;
+//   top: 100%;
+//   left: 0;
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+//   background-color: #010202;
+//   border: 1px solid #010202;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+//   width: 100%;
+//   border-bottom-left-radius: 20px;
+//   border-bottom-right-radius: 20px;
+
+//   li {
+//     // padding: 8px 16px;
+//     cursor: pointer;
+//     color: #fff;
+
+//     &:hover {
+//       background-color: #181c1c;
+//       color: #16e6ef;
+//     }
+//   }
+// }
+@media screen and (max-width: 280px) {
+  .accountNumber {
+    font-size: 1rem !important;
+    // margin-left: 10px;
+  }
+
+  .depositBtn {
+    padding-right: 1.8rem !important;
+  }
+
+  .withdrawalBtn {
+    padding-right: 4rem !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .settingDropdownContainer {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .accountTextContainer {
+    .accountNumber {
+      font-size: 2rem !important;
+      // margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .headerSection {
+    span {
+      font-size: 0.9rem !important;
+    }
+  }
+
+  .accountTextContainer {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  .walletDropdownContainer {
+    width: 57% !important;
+  }
+
+  .settingsContainer {
+    height: 100%;
+
+    .settings {
+      .headerSection {
+        span {
+          font-size: 0.9rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .walletHeading {
+    font-size: 50px !important;
+  }
+
+  .tableHeading {
+    margin-left: 1.8rem;
+  }
+
+  .headerSection {
+    flex-direction: column;
+
+    .walletDropdownContainer {
+      width: 55%;
+    }
+  }
+
+  .accountTextContainer {
+    flex-direction: column;
+
+    .accountNumber {
+      font-size: 1.6rem !important;
+      margin-left: 10px;
+    }
+
+    .acccountDropdown {
+      padding-left: 0px !important;
+    }
+  }
+
+  .accountRightContainer {
+    flex-direction: column;
+
+    .withdrawalBtn {
+      margin-left: 0px !important;
+      margin-top: 16px;
+    }
+  }
+
+  .accountContainer {
+    padding: 14px;
+  }
+
+  // .shadow {
+  //   margin-top: 9rem;
+  // }
+}
+
+@media screen and (max-width: 540px) {
+  .walletHeading {
+    font-size: 50px !important;
+  }
+
+  .headerSection {
+    flex-direction: column;
+
+    .walletDropdownContainer {
+      width: 58%;
+    }
+  }
+
+  .accountTextContainer {
+    .accountNumber {
+      font-size: 2.1rem;
+      margin-left: 10px;
+    }
+
+    .acccountDropdown {
+      padding-left: 0px !important;
+    }
+  }
+
+  .accountRightContainer {
+    flex-direction: column;
+
+    .withdrawalBtn {
+      margin-left: 0px !important;
+      margin-top: 16px;
+    }
+  }
+
+  .accountContainer {
+    padding: 14px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .container {
+    .settingsContainer {
+      .settings {
+        padding-top: 108px;
+        font-size: 32px;
+        line-height: 110%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tableHeader {
+    margin-right: -2.1rem !important;
+  }
+
+  .tablerows {
+    padding-left: 1rem;
+    width: 21.5vw !important;
+    text-align: left;
+  }
+
+  .tableRow {
+    width: 23vw !important;
+    text-align: left;
+  }
+
+  .tablerows {
+    padding-left: 1rem;
+    width: 21.5vw !important;
+    text-align: left;
+    // width: 25%;
+  }
+  .tableRowend {
+    width: 18vw !important;
+    padding-left: 48px !important;
+    text-align: left;
+}
+
+  // .bitcoinText11 {
+  //   width: 17vw !important;
+  // }
+
+  // .bitcoinText13 {
+  //   margin-left: 0px !important;
+  // }
+
+  // .shadow1 {
+  //   width: 100% !important;
+  //   bottom: -4rem !important;
+  // }
+  // .shadow {
+  //   top: 85rem !important;
+  // }
+}
+
+@media screen and (max-width: 820px) {
+  .walletDropdownContainer {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .walletTableContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .walletTokensContainer1 {
+    width: 100% !important;
+
+  }
+
+  .walletTokensContainer {
+    width: 100% !important;
+
+  }
+
+  // .bitcoinText13 {
+  //   margin-left: 1.5rem;
+  // }
+
+  .walletTransactionContainer {
+    width: 100% !important;
+    margin-left: 0px !important;
+    margin-top: 26px;
+  }
+
+  .walletTransactionContainer1 {
+    width: 100% !important;
+    margin-left: 0px !important;
+    margin-top: 26px;
+  }
+
+  .accountContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .accountRightContainer {
+    display: flex;
+    justify-content: flex-start !important;
+    padding-top: 20px;
+  }
+
+  // .shadow {
+  //   top: 82rem;
+  // }
+  .tableHeader {
+    padding-right: 9.9rem !important;
+  }
+
+  .tablerows {
+    padding-left: 1rem;
+    width: 21.5vw !important;
+    text-align: left;
+    // width: 25%;
+  }
+
+  .tableRow {
+    width: 20vw !important;
+    text-align: left;
+  }
+
+  .tableRowend {
+    width: 18vw;
+    padding-left: 12px;
+    text-align: left;
+    padding-right: 4rem;
+  }
+  
+}
+
+.transitionTableHeading {
+  color: #677778;
+  font-family: 'Avenir';
+  font-size: 14px;
+  font-weight: '400';
+  line-height: 19.6px;
+  height: 50px;
+
+  .tableChildDate {
+    color: #677778;
+    padding-left: 20px;
+  }
+}
+
+// .loderIconContainer{
+//   width: 85vw;
+//   height: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+@media screen and (max-width: 1440px) {
+  .tableHeader1 {
+    padding-right: 0px !important;
+  }
+
+  .tableHeader {
+    padding-right: 5.9rem;
+  }
+
+  .tableHeadingToken1 {
+    width: 10vw;
+    padding-right: 1.5rem !important;
+  }
+
+  // .tableHeadingToken{
+
+  // }
+  .tableHeadingToken1 {
+    padding-left: 2rem;
+    text-align: end;
+  }
+
+  // .tableHeadingToken2{
+  //   margin-right: 1rem ;
+  // }
+  // .tableHeadingToken3{
+  //   margin-right: 4rem !important;
+  // }
+  .tableHeading1 {
+    padding-left: 0px !important;
+  }
+
+  .tableHeading2 {
+    padding-left: 0px !important;
+  }
+
+  .tableHeading3 {
+    padding-left: 0px !important;
+  }
+
+  // .shadow1 {
+  //   bottom: 6rem !important;
+  // }
+  .accountNumber {
+    font-size: 2.5rem;
+  }
+
+  .accountRightContainer {
+    display: flex;
+  }
+
+  .depositBtn {
+    padding-right: 7rem;
+  }
+
+  // .tablerows {
+  //   width: 27%;
+  // }
+
+  .tabs {
+    width: 55% !important;
+  }
+
+  // .shadow {
+  //   // bottom: 5rem;
+  // }
+}
+
+@media screen and (max-width: 2560px) {
+  .tableHeading {
+    width: 24%;
+  }
+
+  // .tableHeadingToken{
+
+  // }
+  .tableHeadingToken1 {
+    padding-right: 2rem;
+    text-align: end;
+  }
+
+  // .bitcoinText13 {
+  //   padding-left: 0.8rem;
+  // }
+
+  // .tableHeadingToken2{
+  //   margin-right: 1rem ;
+  // }
+  // .tableHeadingToken3{
+  //   margin-right: 4rem !important;
+  // }
+}
